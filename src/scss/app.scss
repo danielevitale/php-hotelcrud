@@ -1,49 +1,7 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-
-  .container_title {
-    width: 100%;
-    background-color: orange;
-    color: blue;
-  }
-
-  h1 {
-    text-align: center;
-    padding: 30px;
-  }
-
-  .container_stanze {
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    background-color: orange;
-
-    table {
-      padding: 10px 0;
-      color: white;
-
-      tr {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      th {
-        font-size: 20px;
-        color: green;
-      }
-
-      td {
-        font-size: 20px;
-      }
-    }
-  }
-}
+//@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import 'src/scss/partial/_variabili.scss';
+@import 'src/scss/partial/_common.scss';
+@import 'src/scss/partial/_header.scss';
+@import 'src/scss/partial/_main.scss';
+@import 'src/scss/partial/_stanza.scss';
+@import 'src/scss/partial/_modifiche.scss';

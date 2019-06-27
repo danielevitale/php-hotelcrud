@@ -1,0 +1,38 @@
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .container_stanze {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: orange;
+
+    .stanze {
+      height: 50px;
+      display: flex;
+      justify-content: space-around;
+      margin: 10px;
+
+      h2 {
+        color: white;
+        line-height: 50px;
+
+        span {
+          color: blue;
+        }
+      }
+
+      a {
+        line-height: 50px;
+        text-decoration: none;
+        color: white;
+        padding: 0 5px;
+        border-radius: 20%;
+        background-color: green;
+      }
+    }
+  }
+}

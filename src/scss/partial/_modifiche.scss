@@ -1,0 +1,15 @@
+.container_modifiche {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  background-color: orange;
+  padding: 30px;
+  color: green;
+
+  h2 {
+    margin-bottom: 10px;
+    color: blue;
+  }
+}

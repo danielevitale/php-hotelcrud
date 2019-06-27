@@ -1,66 +1,49 @@
+<?php
+include 'db_config.php';
 
+// Connessione
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Controllo esito connessione
+if ($conn && $conn->connect_error) {
+    echo ("Connection failed: " . $conn->connect_error);
+    exit();
+}
 
+$sql = "SELECT room_number, id FROM stanze";
+$result = $conn->query($sql);
+?>
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="public/css/app.css">
+<?php
+include 'partial_php/_head.php';
+include 'partial_php/_header.php';
+?>
 
-  </head>
-  <body>
-
-    <div class="container">
-      <div class="container_title">
-        <h1>Stanze Hotel Boolean</h1>
-      </div>
-
-      <div class="container_stanze">
-
-        <?php
-
-        $servername = "localhost";
-        $username = "root";
-        $password = "root";
-        $dbname = "hotel";
-
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        if ($conn && $conn->connect_error) {
-            echo ("Connection failed: " . $conn->connect_error);
-            exit();
+  <div class="container">
+    <div class="container_stanze">
+      <?php
+      if ($result && $result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+      ?>
+        <div class="stanze">
+          <h2>Stanza numero: <span><?php echo $row['room_number']?></span> </h2>
+          <a type="button" href="show.php?id=<?php echo $row['id'] ?>">Visualizza</a>
+          <a type="button" href="edit.php?id=<?php echo $row['id'] ?>">Modifica</a>
+          <a type="button" href="#">Cancella</a>
+        </div>
+      <?php
         }
-
-        $sql = "SELECT room_number, floor FROM stanze";
-        $result = $conn->query($sql);
-
-        if ($result && $result->num_rows > 0) {
-          while($row = $result->fetch_assoc()) {
-        ?>
-            <table>
-            <tr>
-              <th>Stanza numero</th>
-              <th>Piano</th>
-            </tr>
-            <tr>
-              <td><?php echo $row['room_number']?></td>
-              <td><?php echo $row['floor']?></td>
-            </tr>
-            </table>
-        <?php
+      } elseif ($result) {
+          echo "0 results";
+        } else {
+            echo "query error";
           }
-        } elseif ($result) {
-            echo "0 results";
-          } else {
-              echo "query error";
-            }
-
-        $conn->close();
       ?>
     </div>
+  </div>
 
-    </div>
+  <?php
+  $conn->close();
+  ?>
 
 
   </body>

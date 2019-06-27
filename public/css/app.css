@@ -4,6 +4,35 @@
   padding: 0;
 }
 
+.container_title {
+  width: 100%;
+  height: 100px;
+  color: blue;
+  position: relative;
+  border-bottom: 3px solid green;
+}
+
+.container_title .img {
+  position: absolute;
+  left: 5px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  height: 100px;
+  width: 30%;
+}
+
+.container_title img {
+  height: 50%;
+}
+
+.container_title h1 {
+  font-size: 30px;
+  line-height: 100px;
+  text-align: center;
+}
+
 .container {
   width: 100%;
   display: -webkit-box;
@@ -15,19 +44,8 @@
           flex-direction: column;
 }
 
-.container .container_title {
-  width: 100%;
-  background-color: orange;
-  color: blue;
-}
-
-.container h1 {
-  text-align: center;
-  padding: 30px;
-}
-
 .container .container_stanze {
-  width: 300px;
+  width: 500px;
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
@@ -36,24 +54,61 @@
   background-color: orange;
 }
 
-.container .container_stanze table {
-  padding: 10px 0;
-  color: white;
-}
-
-.container .container_stanze table tr {
+.container .container_stanze .stanze {
+  height: 50px;
   display: -webkit-box;
   display: flex;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
+  justify-content: space-around;
+  margin: 10px;
 }
 
-.container .container_stanze table th {
-  font-size: 20px;
+.container .container_stanze .stanze h2 {
+  color: white;
+  line-height: 50px;
+}
+
+.container .container_stanze .stanze h2 span {
+  color: blue;
+}
+
+.container .container_stanze .stanze a {
+  line-height: 50px;
+  text-decoration: none;
+  color: white;
+  padding: 0 5px;
+  border-radius: 20%;
+  background-color: green;
+}
+
+.stanza {
+  width: 500px;
+  margin: 20px auto;
+  background-color: orange;
+  color: white;
+  padding: 20px;
+}
+
+.stanza span {
+  color: blue;
+}
+
+.container_modifiche {
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  margin-top: 50px;
+  background-color: orange;
+  padding: 30px;
   color: green;
 }
 
-.container .container_stanze table td {
-  font-size: 20px;
+.container_modifiche h2 {
+  margin-bottom: 10px;
+  color: blue;
 }
 

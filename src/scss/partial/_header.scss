@@ -1,0 +1,26 @@
+.container_title {
+  width: 100%;
+  height: $altezza_header;
+  color: blue;
+  position: relative;
+  border-bottom: 3px solid green;
+
+  .img {
+    position: absolute;
+    left: 5px;
+    display: flex;
+    align-items: center;
+    height: $altezza_header;
+    width: 30%;
+  }
+
+  img {
+    height: 50%;
+  }
+
+  h1 {
+  font-size: 30px;
+  line-height: $altezza_header;
+  text-align: center;
+  }
+}
