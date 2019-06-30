@@ -9,8 +9,10 @@ if ($conn && $conn->connect_error) {
     exit();
 }
 
+// Leggo l'id della stanza che l'utente ha scelto di visualizare
 $id_stanza = $_GET['id'];
 
+// Effettuo la query per visualizzare le info della stanza che ha quel id
 $sql = "SELECT * FROM stanze WHERE id = $id_stanza";
 $result = $conn->query($sql);
 ?>
@@ -21,10 +23,12 @@ include 'partial_php/_header.php';
 ?>
 
     <?php
+    // Controllo che la query inserita sia giusta e che abbia restituito almeno una riga di risultati
+
     if ($result && $result->num_rows > 0) {
+      // Stampo i risultati della query
       while($row = $result->fetch_assoc()) {
     ?>
-
     <div class="stanza">
       <h1>Stanza numero: <span><?php echo $row['room_number']?></span> </h1>
       <h2>id: <span><?php echo $row['id']?></span> </h2>

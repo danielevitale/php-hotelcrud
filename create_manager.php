@@ -8,22 +8,20 @@ if ($conn && $conn->connect_error) {
     echo ("Connection failed: " . $conn->connect_error);
     exit();
 }
-
 // Verifico che la get non sia vuota e che quindi l'utente non sia entrato nella pagine senza aver inserito
-// i dati nel form della pagina edit.php
+// i dati nel form della pagina create.php
 if(empty($_GET)) {
-  echo "si è verificato un errore";
+  echo "Si è verificato un errore";
   exit();
 }
 
-// Leggo i parametri inviati dal form della pagina edit.php
-$id_stanza = intval($_GET['id']);
+// Leggo i parametri inviati dal form della pagina create.php
 $room_number = $_GET['numero_stanza'];
 $floor = intval($_GET['piano']);
 $beds = intval($_GET['numero_letti']);
 
-// Effettuo la query per modificare i dati della stanza che ha quel id
-$sql = "UPDATE stanze SET room_number = $room_number, floor = $floor, beds = $beds, updated_at = NOW() WHERE id = $id_stanza";
+// Effettuo la query per inserire i dati della nuova stanza
+$sql = "INSERT INTO stanze (room_number, floor, beds, created_at, updated_at) VALUES ($room_number, $floor, $beds, NOW(), NOW())";
 $result = $conn->query($sql);
 ?>
 
@@ -35,8 +33,8 @@ include 'partial_php/_header.php';
 <?php
 if ($result) {
 ?>
-  <!-- All'utente compare il messaggio modifica effettuata -->
-  <h1>Modifica effettuata</h1>
+  <!-- All'utente compare il messaggio Stanza inserita -->
+  <h1>Stanza inserita</h1>
   <a href="index.php">Torna alle stanze</a>
 <?php
 }else {
