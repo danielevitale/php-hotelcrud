@@ -38,7 +38,7 @@ include 'partial_php/_header.php';
       <h2>Updated at: <span><?php echo $row['updated_at']?></span> </h2>
     </div>
 
-    <a href="index.php">Torna alle stanze</a>
+    <a id="crea" href="index.php">Torna alle stanze</a>
 
 
     <?php

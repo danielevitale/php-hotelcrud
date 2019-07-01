@@ -37,7 +37,7 @@ if ($result) {
 ?>
   <!-- All'utente compare il messaggio modifica effettuata -->
   <h1>Modifica effettuata</h1>
-  <a href="index.php">Torna alle stanze</a>
+  <a id="crea" href="index.php">Torna alle stanze</a>
 <?php
 }else {
 ?>

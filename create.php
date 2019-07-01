@@ -16,4 +16,4 @@ include 'partial_php/_header.php';
     <input type="submit" value="Salva">
   </form>
 </div>
-<a href="index.php">Torna alle stanze</a>
+<a id="crea" href="index.php">Torna alle stanze</a>

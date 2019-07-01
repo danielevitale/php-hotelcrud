@@ -51,7 +51,7 @@ include 'partial_php/_header.php';
           echo "query error";
         }
     ?>
-    <a href="index.php">Torna alle stanze</a>
+    <a id="crea" href="index.php">Torna alle stanze</a>
     <?php
     $conn->close();
     ?>

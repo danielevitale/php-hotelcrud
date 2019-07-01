@@ -35,7 +35,7 @@ if ($result) {
 ?>
   <!-- All'utente compare il messaggio Stanza inserita -->
   <h1>Stanza inserita</h1>
-  <a href="index.php">Torna alle stanze</a>
+  <a id="crea" href="index.php">Torna alle stanze</a>
 <?php
 }else {
 ?>
